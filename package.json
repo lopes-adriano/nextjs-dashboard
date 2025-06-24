@@ -11,7 +11,7 @@
     "autoprefixer": "10.4.20",
     "bcrypt": "^5.1.1",
     "clsx": "^2.1.1",
-    "next": "latest",
+    "next": "15.4.0-canary.94",
     "next-auth": "5.0.0-beta.25",
     "postcss": "8.5.1",
     "postgres": "^3.4.6",
@@ -33,5 +33,6 @@
       "bcrypt",
       "sharp"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.12.3+sha512.467df2c586056165580ad6dfb54ceaad94c5a30f80893ebdec5a44c5aa73c205ae4a5bb9d5ed6bb84ea7c249ece786642bbb49d06a307df218d03da41c317417"
 }
