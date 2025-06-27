@@ -9,11 +9,10 @@ import {
   YAxis,
 } from 'recharts';
 import { Revenue } from '@/app/lib/definitions';
-import { use, useEffect } from 'react';
 
 export default function Chart({ revenue }: { revenue: Revenue[] }) {
   return (
-    <ResponsiveContainer width="100%" height={350}>
+    <ResponsiveContainer width="100%" height={450}>
       <BarChart data={revenue}>
         <XAxis
           dataKey="month"
@@ -28,7 +27,7 @@ export default function Chart({ revenue }: { revenue: Revenue[] }) {
           tickLine={false}
           axisLine={false}
           tickFormatter={(value) =>
-            `$${new Intl.NumberFormat('en-US').format(value)}`
+            `R$${new Intl.NumberFormat('pt-BR').format(value)}`
           }
         />
         <Tooltip
