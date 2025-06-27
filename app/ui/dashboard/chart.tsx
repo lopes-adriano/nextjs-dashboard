@@ -8,12 +8,25 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { Revenue } from '@/app/lib/definitions';
+import { monthMap, monthNamesTranslated, Revenue } from '@/app/lib/definitions';
 
 export default function Chart({ revenue }: { revenue: Revenue[] }) {
+
+  
+
+const sortedMonthlyRevenue = revenue
+  .slice()
+  .sort((a, b) => monthMap[a.month] - monthMap[b.month]);
+
+const translatedMonthlyRevenue = sortedMonthlyRevenue.map((monthlyRevenue) => ({
+  ...monthlyRevenue,
+  month: monthNamesTranslated[monthlyRevenue.month],
+}));
+  
+
   return (
     <ResponsiveContainer width="100%" height={450}>
-      <BarChart data={revenue}>
+      <BarChart data={translatedMonthlyRevenue}>
         <XAxis
           dataKey="month"
           stroke="#888888"

@@ -21,8 +21,9 @@ export default async function Page({
     page?: string;
   };
 }) {
-  const query = searchParams?.query || "";
-  const currentPage = Number(searchParams?.page) || 1;
+  const searchParamsResolved = await searchParams;
+  const query = searchParamsResolved?.query || "";
+  const currentPage = Number(searchParamsResolved?.page) || 1;
   const totalPages = await fetchFilteredCustomersPages(query);
 
   return (
